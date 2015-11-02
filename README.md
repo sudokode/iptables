@@ -123,19 +123,21 @@ All of these flags are used with `iptables` to ever so slowly configure your fir
 Ruleset (Rules File)
 -------
 Once you understand the basics, you can put your entire ruleset into a file rather than using `iptables`. The format is simple:
-    \*nat
+    *nat
     rule1
     rule2
     COMMIT
-    \*filter
+
+    *filter
     rule1
     rule2
     COMMIT
 Each rule is simply the equivalent `iptables` command without the `iptables` part. So to demonstrate for real this time:
-    \*nat
+    *nat
     -A POSTROUTING -o eth0 -j MASQUERADE
     COMMIT
-    \*filter
+
+    *filter
     -P INPUT DROP
     -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
     -A INPUT -s 127.0.0.1 -j ACCEPT
@@ -151,7 +153,7 @@ If this looks scary, **pay attention** because here it is line by line:
   8. This matches any packet with a source address of 127.0.0.1 (our loopback address) and accepts it. Don't forget to do this.
   9. See line 4.
 That is a fairly basic ruleset, but it's actually not far off from the most basic firewall setup:
-    \*filter
+    *filter
     -P INPUT DROP
     -P FORWARD DROP
     -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
