@@ -173,7 +173,7 @@ That is a fairly basic ruleset, but it's actually not far off from the most basi
     -A INPUT -i lo -j ACCEPT
     COMMIT
 
-Very easy to see what's changed and how. Set the default policies, isolate the NEW state, accept loopback, done. That's literally all there is to it. From there, you simply build bigger rules.
+Very easy to see what's changed and how. Set the default policies, isolate the NEW state, allow loopback traffic, done. That's really all there is to it. From there, you simply build bigger rules.
 
 iptables-restore
 ----------------
