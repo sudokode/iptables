@@ -62,8 +62,8 @@ Matches are used to narrow down rules by describing attributes of a packet, such
   * **-p: protocol (tcp, udp, icmp, sctp)**
   * **-s: source address(es)**
   * **-d: destination address(es)**
-  * **-i: input interface**
-  * **-o: output interface**
+  * -i: input interface
+  * -o: output interface
   * ~~-f: packet fragment~~
 
 [**Implicit matches**](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules):
