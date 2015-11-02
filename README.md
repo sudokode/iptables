@@ -124,6 +124,7 @@ Ruleset (Rules File)
 -------
 Once you understand the basics, you can put your entire ruleset into a file rather than using `iptables`. The format is simple:
 
+    # iptables ruleset - 2015/11/02
     *nat
     rule1
     rule2
@@ -136,6 +137,7 @@ Once you understand the basics, you can put your entire ruleset into a file rath
 
 Each rule is simply the equivalent `iptables` command without the `iptables` part. So to demonstrate for real this time:
 
+    # iptables ruleset - 2015/11/02
     *nat
     -A POSTROUTING -o eth0 -j MASQUERADE
     COMMIT
@@ -158,6 +160,7 @@ If this looks scary, **pay attention** because here it is line by line:
   9. See line 4.
 That is a fairly basic ruleset, but it's actually not far off from the most basic firewall setup:
 
+    # iptables ruleset - 2015/11/02
     *filter
     -P INPUT DROP
     -P FORWARD DROP
