@@ -58,7 +58,7 @@ Matches are used to narrow down rules by describing attributes of a packet, such
   * [implicit](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules) - protocol-specific matches
   * [explicit](https://github.com/sudokode/iptables/blob/master/matches/explicit.rules) - matches not related to protocols
 
-[Generic matches](https://github.com/sudokode/iptables/blob/master/matches/generic.rules):
+[**Generic matches**](https://github.com/sudokode/iptables/blob/master/matches/generic.rules):
   * **-p: protocol (tcp, udp, icmp, sctp)**
   * **-s: source address(es)**
   * **-d: destination address(es)**
@@ -66,7 +66,7 @@ Matches are used to narrow down rules by describing attributes of a packet, such
   * **-o: output interface**
   * ~~-f: packet fragment~~
 
-[Implicit matches](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules):
+[**Implicit matches**](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules):
   * **--sport: source port (TCP, UDP, SCTP)**
   * **--dport: destination port (TCP, UDP, SCTP)**
   * **--tcp-flags: TCP flags**
@@ -75,7 +75,7 @@ Matches are used to narrow down rules by describing attributes of a packet, such
   * **--icmp-type: ICMP type**
   * ~~--chunk-types~~: SCTP chunk type
   
-[Explicit matches](https://github.com/sudokode/iptables/blob/master/matches/explicit.rules) (-m <match>), abridged list:
+[**Explicit matches**](https://github.com/sudokode/iptables/blob/master/matches/explicit.rules) (-m <match>), abridged list:
   * comment - add comments to the ruleset
   * connmark - matches a marked connection (-j CONNMARK)
   * **conntrack** - matches connection tracking attributes like state
