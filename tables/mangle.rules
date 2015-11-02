@@ -1,0 +1,5 @@
+# The mangle table
+# iptables -t mangle -A POSTROUTING -o eth0 -j TTL --ttl-set 64
+*mangle
+-A POSTROUTING -o eth0 -j TTL --ttl-set 64
+COMMIT

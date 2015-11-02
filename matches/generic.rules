@@ -1,0 +1,15 @@
+# Using generic matches
+
+*filter
+# accept TCP packets from 10.0.1.2
+-A INPUT -p tcp -s 10.0.1.2 -j ACCEPT
+
+# drop UDP packets going to 10.1.4.4
+-A INPUT -p udp -d 10.1.4.4 -j DROP
+
+# accept packets coming in on the loopback interface
+-A INPUT -i lo -j ACCEPT
+
+# drop forwarded packets going out on br0
+-A FORWARD -o br0 -j DROP
+COMMIT

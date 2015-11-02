@@ -1,0 +1,6 @@
+# Using the filter table
+# iptables defaults to this table
+# iptables -A INPUT -j DROP
+*filter
+-A INPUT -j DROP
+COMMIT

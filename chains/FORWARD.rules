@@ -1,0 +1,5 @@
+# Using the FORWARD chain
+
+*filter
+-A FORWARD -i eth0 -o br0 -j ACCEPT
+COMMIT

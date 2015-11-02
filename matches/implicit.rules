@@ -1,0 +1,18 @@
+# Using implicit matches
+
+*filter
+# accept TCP packets destined for port 80
+-A INPUT -p tcp --dport 80 -j ACCEPT
+
+# accept UDP packets coming from port 5555
+-A INPUT -p udp --sport 5555 -j ACCEPT
+
+# drop TCP packets with the SYN and FIN flags set
+-A INPUT -p tcp --tcp-flags SYN,FIN -j DROP
+
+# log TCP SYN packets
+-A INPUT -p tcp --syn -j LOG --log-prefix "New TCP connection: "
+
+# log ICMP echo requests
+-A INPUT -p icmp --icmp-type 8 -j LOG --log-prefix "Ping: "
+COMMIT

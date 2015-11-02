@@ -1,0 +1,5 @@
+# Using the nat table
+# iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+*nat
+-A POSTROUTING -o eth0 -j MASQUERADE
+COMMIT

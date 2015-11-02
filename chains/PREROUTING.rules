@@ -1,0 +1,5 @@
+# Using the PREROUTING chain
+
+*nat
+-A PREROUTING -i eth0 -j DNAT --to-destination 10.0.0.1
+COMMIT

@@ -1,0 +1,16 @@
+# Using custom chains
+
+*filter
+-N WHITELIST
+-A WHITELIST -j ACCEPT
+
+-N BLACKLIST
+-A BLACKLIST -j DROP
+
+-N TCP
+-A TCP -s 10.0.0.1 -j WHITELIST
+-A TCP -s 192.168.1.1 -j BLACKLIST
+-A TCP -j DROP
+
+-A INPUT -p tcp -j TCP
+COMMIT

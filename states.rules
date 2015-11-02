@@ -1,0 +1,12 @@
+# Using statefulness
+
+*filter
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+-A INPUT -m conntrack --ctstate INVALID -j DROP
+
+# all packets are now in the NEW or UNTRACKED states
+# these are the ones to be tracked on the INPUT chain
+
+-A INPUT -j LOG "New connection: "
+COMMIT

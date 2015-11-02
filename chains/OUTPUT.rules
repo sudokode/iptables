@@ -1,0 +1,5 @@
+# Using the OUTPUT chain
+
+*filter
+-A OUTPUT -d 127.0.0.1 -j ACCEPT
+COMMIT

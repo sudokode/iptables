@@ -1,0 +1,5 @@
+# Using the INPUT chain
+
+*filter
+-A INPUT -j DROP
+COMMIT

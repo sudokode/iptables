@@ -1,0 +1,12 @@
+# Using explicit matches
+
+*filter
+# accept packets associated with connections in the ESTABLISHED or RELATED states
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+# drop packets coming from the range 1.2.3.4 to 1.3.4.42
+-A INPUT -m iprange --src-range 1.2.3.4-1.3.4.42 -j DROP
+
+# log packets with a TTL greater than 64
+-A INPUT -m ttl --ttl-gt 64 -j LOG --log-prefix "TTL higher than 64: "
+COMMIT
