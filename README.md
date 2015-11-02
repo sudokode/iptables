@@ -123,6 +123,7 @@ All of these flags are used with `iptables` to ever so slowly configure your fir
 Ruleset (Rules File)
 -------
 Once you understand the basics, you can put your entire ruleset into a file rather than using `iptables`. The format is simple:
+
     *nat
     rule1
     rule2
@@ -132,7 +133,9 @@ Once you understand the basics, you can put your entire ruleset into a file rath
     rule1
     rule2
     COMMIT
+
 Each rule is simply the equivalent `iptables` command without the `iptables` part. So to demonstrate for real this time:
+
     *nat
     -A POSTROUTING -o eth0 -j MASQUERADE
     COMMIT
@@ -142,6 +145,7 @@ Each rule is simply the equivalent `iptables` command without the `iptables` par
     -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
     -A INPUT -s 127.0.0.1 -j ACCEPT
     COMMIT
+
 If this looks scary, **pay attention** because here it is line by line:
   1. This is a comment which will not end up in the ruleset presented to the kernel (there's a way to do that, look up).
   2. In a rules file, this sets the table you're in (instead of using -t).
@@ -153,12 +157,14 @@ If this looks scary, **pay attention** because here it is line by line:
   8. This matches any packet with a source address of 127.0.0.1 (our loopback address) and accepts it. Don't forget to do this.
   9. See line 4.
 That is a fairly basic ruleset, but it's actually not far off from the most basic firewall setup:
+
     *filter
     -P INPUT DROP
     -P FORWARD DROP
     -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
     -A INPUT -i lo -j ACCEPT
     COMMIT
+
 Very easy to see what's changed and how. Set the default policies, isolate the NEW state, accept loopback, done. That's literally all there is to it. From there, you simply build bigger rules.
 
 iptables-restore
