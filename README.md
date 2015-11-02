@@ -88,6 +88,10 @@ Matches are used to narrow down rules by describing attributes of a packet, such
   * **recent** - matching system, commonly used for rate limiting
   * ~~ttl~~ - matches packet TTL
 
+Jumps (-j)
+-----
+Jumps are actions to take once a match is achieved. Some matches, like comment, do not require a jump; the module does the work already. Those are rare, so at the end of most rules, be prepared to jump. A jump can be a custom chain or a target. You cannot jump to the built-in chains so as not to interfere with normal traversal.
+
 Targets (-j)
 -------
 Chains can be jumped to within tables, but to do certain actions once a final match is achieved, targets are used. Here are some commonly used targets:
