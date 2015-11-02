@@ -69,8 +69,8 @@ Matches are used to narrow down rules by describing attributes of a packet, such
 [**Implicit matches**](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules):
   * **--sport: source port (TCP, UDP, SCTP)**
   * **--dport: destination port (TCP, UDP, SCTP)**
-  * **--tcp-flags: TCP flags**
-  * **--syn: TCP SYN packet**
+  * --tcp-flags: TCP flags
+  * --syn: TCP SYN packet
   * ~~--tcp-option~~: TCP option
   * **--icmp-type: ICMP type**
   * ~~--chunk-types~~: SCTP chunk type
