@@ -54,9 +54,9 @@ Think of a rule as a sentence containing a subject and a predicate. But instead,
 [Matches](https://github.com/sudokode/iptables/tree/master/matches)
 ---------
 Matches are used to narrow down rules by describing attributes of a packet, such as its source address or connection state. Matches come in three flavors:
-  * [generic](https://github.com/sudokode/iptables/blob/master/matches/generic.rules) - generic protocol matches
-  * [implicit](https://github.com/sudokode/iptables/blob/master/matches/implicit.rules) - protocol-specific matches
-  * [explicit](https://github.com/sudokode/iptables/blob/master/matches/explicit.rules) - matches not related to protocols
+  * generic - generic protocol matches
+  * implicit - protocol-specific matches
+  * explicit - matches not related to protocols
 
 [**Generic matches**](https://github.com/sudokode/iptables/blob/master/matches/generic.rules):
   * **-p: protocol (tcp, udp, icmp, sctp)**
