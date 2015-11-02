@@ -118,7 +118,7 @@ Yes, the tool again. Most of the topics from above are simply flags you pass to 
   * -D: delete rule from chain
   * -I: insert rule into chain
   * -L: list rules [in chain]
-  * -S: list rules \[in chain\] (rules format)
+  * -S: list rules \[in chain\] (rules file format)
   * -j: jump to target/chain
   * -P: set default policy
 
