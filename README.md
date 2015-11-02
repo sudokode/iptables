@@ -158,6 +158,7 @@ If this looks scary, **pay attention** because here it is line by line:
   7. This matches any packets in the ESTABLISHED and RELATED state and accepts them. Remember, isolate the NEW state.
   8. This matches any packet with a source address of 127.0.0.1 (our loopback address) and accepts it. Don't forget to do this.
   9. See line 4.
+
 That is a fairly basic ruleset, but it's actually not far off from the most basic firewall setup:
 
     # iptables ruleset - 2015/11/02
