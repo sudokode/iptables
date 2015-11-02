@@ -16,9 +16,9 @@ Legend:
 Netfilter is a stateful packet filter framework, which means it organizes packets into groups called connections described by attributes like source and destination addresses. Be advised: these connections only represent logical organizational packets used by Netfilter and not the same connection used by protocols like TCP or SCTP. Within Netfilter, even ICMP and UDP packets are part of a connection, and it is important to understand when various states of connection tracking occur, independent of the underlying protocol. The `conntrack` tool is useful for examining connections.
 
 There are five main states and two virtual states that connections within Netfilter will fall:
-  * NEW - traffic only seen in one direction, in or out (e.g. TCP SYN)
-  * ESTABLISHED - traffic seen in both directions, in and out (e.g. TCP ACK)
-  * RELATED - new connection from an ESTABLISHED connection (e.g. FTP transfer)
+  * **NEW** - traffic only seen in one direction, in or out (e.g. TCP SYN)
+  * **ESTABLISHED** - traffic seen in both directions, in and out (e.g. TCP ACK)
+  * **RELATED** - new connection from an ESTABLISHED connection (e.g. FTP transfer)
   * INVALID - no connection (e.g.  TCP ACK without a prior SYN)
   * UNTRACKED - not tracked
   * ~~SNAT~~ - original source address differs from the reply destination
@@ -27,19 +27,19 @@ There are five main states and two virtual states that connections within Netfil
 [Tables](https://github.com/sudokode/iptables/tree/master/tables) (-t, -L, -S, -F, -Z, -X)
 --------
 Tables contain chains. There are four tables, only two of which are used during normal configuration:
-  * [filter](https://github.com/sudokode/iptables/blob/master/tables/filter.rules) - where the firewall stuff goes: accept, drop, reject, rate limit, etc
-  * [nat](https://github.com/sudokode/iptables/blob/master/tables/nat.rules) - where the NAT stuff goes: SNAT, DNAT, masquerade, redirection, etc
+  * [**filter**](https://github.com/sudokode/iptables/blob/master/tables/filter.rules) - where the firewall stuff goes: accept, drop, reject, rate limit, etc
+  * [**nat**](https://github.com/sudokode/iptables/blob/master/tables/nat.rules) - where the NAT stuff goes: SNAT, DNAT, masquerade, redirection, etc
   * [mangle](https://github.com/sudokode/iptables/blob/master/tables/mangle.rules) - where you mangle packets: change TTL, etc
   * ~~raw~~ - where you shouldn't be
 
 [Chains](https://github.com/sudokode/iptables/tree/master/chains) (-A, -C, -D, -I, -R, -L, -S, -F, -Z, -X, -P, -E)
 --------
 Chains contain rules. There are five built-in chains that exist on various tables:
-  * [INPUT](https://github.com/sudokode/iptables/blob/master/chains/INPUT.rules) - filter, mangle
+  * [**INPUT**](https://github.com/sudokode/iptables/blob/master/chains/INPUT.rules) - filter, mangle
   * [OUTPUT](https://github.com/sudokode/iptables/blob/master/chains/OUTPUT.rules) - filter, nat, mangle, raw
-  * [FORWARD](https://github.com/sudokode/iptables/blob/master/chains/FORWARD.rules) - filter, mangle
+  * [**FORWARD**](https://github.com/sudokode/iptables/blob/master/chains/FORWARD.rules) - filter, mangle
   * [PREROUTING](https://github.com/sudokode/iptables/blob/master/chains/PREROUTING.rules) - nat, mangle, raw
-  * [POSTROUTING](https://github.com/sudokode/iptables/blob/master/chains/POSTROUTING.rules) - nat, mangle
+  * [**POSTROUTING**](https://github.com/sudokode/iptables/blob/master/chains/POSTROUTING.rules) - nat, mangle
 
 Custom chains can be added for more organization.
 
