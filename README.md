@@ -32,7 +32,7 @@ Tables contain chains. There are four tables, only two of which are used during 
   * [mangle](https://github.com/sudokode/iptables/blob/master/tables/mangle.rules) - where you mangle packets: change TTL, etc
   * ~~raw~~ - where you shouldn't be
 
-[Chains](https://github.com/sudokode/iptables/tree/master/chains) (-A, -C, -D, -I, -R, -L, -S, -F, -Z, -X, -P, -E)
+[Chains](https://github.com/sudokode/iptables/tree/master/chains) (-A, -C, -D, -I, -R, -L, -S, -F, -Z, -N, -X, -P, -E)
 --------
 Chains contain rules. There are five built-in chains that exist on various tables:
   * [**INPUT**](https://github.com/sudokode/iptables/blob/master/chains/INPUT.rules) - filter, mangle
@@ -113,14 +113,16 @@ The default policy of a chain is a target that the chain ends with by default. A
 iptables
 --------
 Yes, the tool again. Most of the topics from above are simply flags you pass to `iptables`:
-  * -t: select table (defaults to filter)
-  * -A: append rule to chain
+  * **-t: select table (defaults to filter)**
+  * **-A: append rule to chain**
   * -D: delete rule from chain
   * -I: insert rule into chain
   * -L: list rules [in chain]
-  * -S: list rules \[in chain\] (rules file format)
-  * -j: jump to target/chain
-  * -P: set default policy
+  * **-S: list rules \[in chain\] (rules file format)**
+  * **-N: create a custom chain**
+  * **-j: jump to target/chain**
+  * **-P: set default policy**
+  * **-m: [explicit] match**
 
 All of these flags are used with `iptables` to ever so slowly configure your firewall...
 
