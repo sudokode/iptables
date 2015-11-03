@@ -49,7 +49,7 @@ It's far easier to understand if you just look at [this image](https://www.froze
 
 Rules (-A, -C, -D, -I, -R, -L, -S, -F, -Z)
 -----
-Think of a rule as a sentence containing a subject and a predicate. But instead, a rule contains a match (or matches) and a target (jump). All of the conditions must be met in order for the jump to take place. A jump will always lead to another chain. In the case of built-in jumps, you will end up at the next chain in the normal traversal path. A custom chain behaves similarly to a function in a script. A jump is used (like a function call) to move to that chain and after its traversal, the flow jumps back to the next rule in the calling chain. The same applies for all rules in all chains on all tables.
+Think of a rule as a sentence containing a subject and a predicate. But instead, a rule contains a match (or matches) and a jump (target). All of the conditions must be met in order for the jump to take place. A jump will always lead to another chain. In the case of built-in jumps, you will end up at the next chain in the normal traversal path. A custom chain behaves similarly to a function in a script. A jump is used (like a function call) to move to that chain and after its traversal, the flow jumps back to the next rule in the calling chain. The same applies for all rules in all chains on all tables.
 
 [Matches](https://github.com/sudokode/iptables/tree/master/matches)
 ---------
