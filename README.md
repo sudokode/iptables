@@ -13,7 +13,7 @@ Legend:
 
 [Statefulness](https://github.com/sudokode/iptables/blob/master/states.rules)
 --------------
-Netfilter is a stateful packet filter framework, which means it organizes packets into groups called connections described by attributes like source and destination addresses. Be advised: these connections only represent logical organizational packets used by Netfilter and not the same connection used by protocols like TCP or SCTP. Within Netfilter, even ICMP and UDP packets are part of a connection, and it is important to understand when various states of connection tracking occur, independent of the underlying protocol. The `conntrack` tool is useful for examining connections.
+Netfilter is a stateful packet filter framework, which means it organizes packets into groups called connections described by attributes like source and destination addresses. Be advised: these connections only represent logical organizational unitss used by Netfilter and not the same connection used by protocols like TCP or SCTP. Within Netfilter, even ICMP and UDP packets are part of a connection, and it is important to understand when various states of connection tracking occur, independent of the underlying protocol. The `conntrack` tool is useful for examining connections.
 
 There are five main states and two virtual states that connections within Netfilter will fall:
   * **NEW** - traffic only seen in one direction, in or out (e.g. TCP SYN)
